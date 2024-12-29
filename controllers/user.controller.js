@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const UserModel = require("../models/User");
 const salt = bcrypt.genSaltSync(10);
 require("dotenv").config();
-const secrect = "process";
+const secrect = process.env.SECRET;
 
 //priorlty จัดลดับความสำคัญ
 //register Libary:bcrypt  Step :1.check Username,Password 

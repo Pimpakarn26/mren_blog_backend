@@ -2,7 +2,8 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 const mongoose = require("mongoose");
-const userRouter = require("./routes/user.router")
+const userRouter = require("./routes/user.router");
+const postRouter = require("./routes/post.router");
 
 const app = express();
 const BASE_URL = process.env.BASE_URL;
@@ -25,7 +26,7 @@ app.get("/",(req, res)=>{
 
 //use Router
 app.use("/api/v1/auth", userRouter);
-
+app.use("/api/v1/post", postRouter);
 
 app.listen(PORT,()=>{
     console.log("Server is running on http://localhost:" + PORT);

@@ -9,4 +9,5 @@ const UserSchema = new Schema({
 
 //สร้างModel
 const UserModel = model("User", UserSchema);
+
 module.exports = UserModel;
