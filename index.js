@@ -4,10 +4,9 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const userRouter = require("./routers/user.router");
 const postRouter = require("./routers/post.router");
-
+const PORT = process.env.PORT || 5000;
 const app = express();
 const BASE_URL = process.env.BASE_URL;
-const PORT = process.env.PORT;
 const DB_URL = process.env.DB_URL;
 
 //Connect to Mongo DB
