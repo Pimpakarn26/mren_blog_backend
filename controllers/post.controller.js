@@ -60,6 +60,7 @@ exports.getPosts = async (req, res) => {
 
 exports.getPostById = async (req, res) => {
   const { id } = req.params;
+
   try {
     const postDoc = await PostModel.findById(id).populate("author", [
       "username",
@@ -70,6 +71,7 @@ exports.getPostById = async (req, res) => {
       });
       return;
     }
+    
     res.json(postDoc);
   } catch (error) {
     console.log(error.message);
